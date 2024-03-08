@@ -1,0 +1,64 @@
+.navi-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    transition: all 1s ease-in-out;
+  }
+  .navi-container {
+    width: 300px;
+    height: 100vh;
+    background-color: white;
+    float: left;
+    padding: 40px 10px;
+    position: relative;
+    color: black;
+  
+    transform: translateX(-100%);
+    animation: slideNaviWindow 0.3s ease forwards;
+  }
+  
+  @keyframes slideNaviWindow {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .navi-links {
+    list-style: none;
+    font-size: 20px;
+  }
+  
+  .navi-links li {
+    margin-bottom: 10px;
+  }
+  
+  .navi-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 2px;
+  }
+  
+  .navi-items {
+    margin-top: 40px;
+    list-style: none;
+    font-weight: 300;
+    color: rgb(91, 90, 90);
+    cursor: pointer;
+  }
+  
+  .navi-close-btn {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  
+  
+  
