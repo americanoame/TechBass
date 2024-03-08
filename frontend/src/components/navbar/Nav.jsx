@@ -1,4 +1,4 @@
-
+import {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { TbSearch} from 'react-icons/tb';
@@ -6,12 +6,27 @@ import { AiOutlineShopping } from 'react-icons/ai';
 
 import './navbar.css';
 
-
 const Nav = () =>  {
+
+  const [scrolled, setScrolled] = useState(false);
+
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    if (offset > 200) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() =>  {
+    window.addEventListener('scroll', handleScroll);
+  });
+
   return (
-    <header className="main-nav">
+    <header className={`main-nav ${scrolled ? 'sticky-nav' : ''}`}>
         <div className="nav-content">
-        <span className="navigation" >
+        <span className="navigation">
             <GiHamburgerMenu />
           </span>
           <Link to="/" className="center">
