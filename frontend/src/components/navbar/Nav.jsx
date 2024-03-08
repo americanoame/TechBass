@@ -1,14 +1,15 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { TbSearch} from 'react-icons/tb';
+import { TbSearch } from 'react-icons/tb';
 import { AiOutlineShopping } from 'react-icons/ai';
+import Navigation from '../../components/navigation/Navigation';
 
 import './navbar.css';
 
-const Nav = () =>  {
-
+const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [navigation, setNavigation] = useState(false);
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -19,14 +20,15 @@ const Nav = () =>  {
     }
   };
 
-  useEffect(() =>  {
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
   });
 
   return (
-    <header className={`main-nav ${scrolled ? 'sticky-nav' : ''}`}>
+    <>
+      <header className={`main-nav ${scrolled ? 'sticky-nav' : ''}`}>
         <div className="nav-content">
-        <span className="navigation">
+        <span className="navigation" onClick={() => setNavigation(true)}>
             <GiHamburgerMenu />
           </span>
           <Link to="/" className="center">
@@ -55,9 +57,10 @@ const Nav = () =>  {
           </div> */}
           </div>
         </div>
-    </header>
- 
-  )
-}
+      </header>
+      {navigation && <Navigation setNavigation={setNavigation} />}
+    </>
+  );
+};
 
 export default Nav;
