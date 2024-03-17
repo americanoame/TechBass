@@ -12,6 +12,7 @@ const Nav = () => {
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [navigation, setNavigation] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -24,50 +25,61 @@ const Nav = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-  });
 
-   
-  const logout = () =>  {
+    const storeData = localStorage.getItem('data');
+    if (storeData) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, []);
+
+  const logout = () => {
     localStorage.removeItem('data');
     toast.success('Log out was successful!');
     navigate('/');
   };
 
-
-
-
-
   return (
     <>
       <header className={`main-nav ${scrolled ? 'sticky-nav' : ''}`}>
         <div className="nav-content">
-        <span className="navigation" onClick={() => setNavigation(true)}>
+          <span className="navigation" onClick={() => setNavigation(true)}>
             <GiHamburgerMenu />
           </span>
           <Link to="/" className="center">
             TechBass
           </Link>
           <div className="nav-content-right">
-            <button type="button" className="search-icon">
-              <TbSearch />
-            </button>
-            <button type="button" className="cart-icon">
-              <AiOutlineShopping />
-              <span>1</span>
-            </button>
-            <button onClick={logout} className="log-out-btn" title="Log Out">
-              LogOut
-            </button>
-            {/* <div className="nav-btn">
-            <Link className="create-btn" to="/login">
-              Login
-            </Link>
-          </div>
-          <div className="nav-btn">
-            <Link className="create-btn" to="/register">
-              Register
-            </Link>
-          </div> */}
+            {isLoggedIn && (
+              <>
+                <button type="button" className="search-icon">
+                  <TbSearch />
+                </button>
+                <button type="button" className="cart-icon">
+                  <AiOutlineShopping />
+                  <span>1</span>
+                </button>
+                <button onClick={logout} className="log-out-btn" title="Log Out">
+                  LogOut
+                </button>
+              </>
+            )}
+
+            {!isLoggedIn && (
+              <>
+                <div className="nav-btn">
+                  <Link className="create-btn" to="/login">
+                    Login
+                  </Link>
+                </div>
+                <div className="nav-btn">
+                  <Link className="create-btn" to="/register">
+                    Register
+                  </Link>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </header>

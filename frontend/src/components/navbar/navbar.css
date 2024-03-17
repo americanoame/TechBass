@@ -90,6 +90,15 @@
   box-shadow: rgba(60, 64, 67, 2) 0 1px 1px 0, rgba(255, 3, 3, 0.827) 0 4px 4px 3px;
 }
 
+.create-btn {
+  text-decoration: none;
+  color: white;
+  margin-left: 5px;
+  
+}
+
+
+
 .main-nav.sticky-nav {
   background-color: #212121;
   color: white;
@@ -151,6 +160,11 @@
     padding: 5px;
     box-shadow: rgba(60, 64, 67, 2) 0 1px 1px 0, rgba(255, 3, 3, 0.827) 0 4px 4px 3px;
   }
+
+  .create-btn {
+    font-size: 12px;
+  }
+
 
   .nav-links a {
     font-size: 13px;
