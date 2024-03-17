@@ -48,7 +48,7 @@
   font-weight: 500;
 }
 
-.product_name_overlay:hover .product_name_overlay {
+.product-card-item:hover .product_name_overlay {
   opacity: 1;
   animation: bounce 0.5s infinite alternate;
 }
