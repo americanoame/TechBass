@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { TbSearch } from 'react-icons/tb';
 import { AiOutlineShopping } from 'react-icons/ai';
 import Navigation from '../../components/navigation/Navigation';
+import { toast } from 'react-hot-toast';
 
 import './navbar.css';
 
 const Nav = () => {
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [navigation, setNavigation] = useState(false);
 
@@ -23,6 +25,17 @@ const Nav = () => {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
   });
+
+   
+  const logout = () =>  {
+    localStorage.removeItem('data');
+    toast.success('Log out was successful!');
+    navigate('/');
+  };
+
+
+
+
 
   return (
     <>
@@ -42,7 +55,7 @@ const Nav = () => {
               <AiOutlineShopping />
               <span>1</span>
             </button>
-            <button className="log-out-btn" title="Log Out">
+            <button onClick={logout} className="log-out-btn" title="Log Out">
               LogOut
             </button>
             {/* <div className="nav-btn">
