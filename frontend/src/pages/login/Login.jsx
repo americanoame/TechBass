@@ -35,11 +35,14 @@ const Login = () => {
       if (log.success) {  
         console.log('Login successful');
         toast.success('Login was successful!');
-        localStorage.setItem('data', JSON.stringify(user)); 
+        localStorage.setItem('data', JSON.stringify(user));
+         
         navigate('/product');
+        
       } else {
         console.error('Login:', log.error);
         toast.error('Login failed!');
+        
       }
     } catch (error) {
       console.error(error);
