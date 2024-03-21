@@ -29,10 +29,10 @@ Check out our project: [Link to your project repository]
 Full-Stack Ecommerce & stripe Payment Gateway.
 
 ## Demo
-[This application is deployed on Render](https://hateybazarey.onrender.com) 
+<!-- [This application is deployed on Render](https://hateybazarey.onrender.com)  -->
 
 
-## 🖥️ TechBass Stack
+## 🖥️ TechBass 
 **Frontend:**
 
 
@@ -54,8 +54,6 @@ Full-Stack Ecommerce & stripe Payment Gateway.
 ![Stripe](https://img.shields.io/badge/Stripe-626CD9?style=for-the-badge&logo=Stripe&logoColor=white)
 
 **Deployed On:**
-
-![Render]()
 
 
 ## 🚀 Features
@@ -87,7 +85,7 @@ the npm run dev command will start the frondend and backend
 npm run dev
 ```
 
-# Speed checking
+## Showcase
 
 <table>
   <tr>
@@ -99,4 +97,4 @@ npm run dev
     <td><img src="https://github.com/americanoame/TechBass/assets/77306236/f3fd8b7f-cda5-473e-ba72-a1135b321154" /></td>
   </tr>
 </table>
-[Title](http://127.0.0.1:5173/product/65e6b87193b1b2174776f7d4)
+<!-- [Title](http://127.0.0.1:5173/product/65e6b87193b1b2174776f7d4) -->
