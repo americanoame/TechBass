@@ -95,8 +95,8 @@ npm run dev
     <td><img src="https://github.com/americanoame/Weather-Dashboard/assets/77306236/f9fe8fcf-c375-4c19-bdc6-023ce8752436" /></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/americanoame/TechBass/assets/77306236/e31dfa8d-56af-4e9e-b3eb-f53cc1b122bb" /></td>
-    <td><img src="https://github.com/americanoame/TechBass/assets/77306236/e31dfa8d-56af-4e9e-b3eb-f53cc1b122bb" /></td>
+    <td><img src="https://github.com/americanoame/TechBass/assets/77306236/32e845ee-4b7f-464e-b028-6e79a720cb73" /></td>
+    <td><img src="https://github.com/americanoame/TechBass/assets/77306236/f3fd8b7f-cda5-473e-ba72-a1135b321154" /></td>
   </tr>
 </table>
 [Title](http://127.0.0.1:5173/product/65e6b87193b1b2174776f7d4)
