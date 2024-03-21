@@ -1,8 +1,38 @@
+import  { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import img1 from '../../assets/shop_left.avif';
+import img20 from '../../assets/shop_left.avif';
+import img1 from '../../assets/p1.webp';
+import img2 from '../../assets/p2.png';
+import img3 from '../../assets/p3.jpg';
+import img4 from '../../assets/p4.png';
+import img5 from '../../assets/p5.webp';
+import img6 from '../../assets/p6.jpg';
+import img10 from '../../assets/p10.png';
+import img8 from '../../assets/p8.jpg';
+import img9 from '../../assets/p9.jpg';
+
 import './home.css';
 
 const Home = () => {
+  const images = [img6, img1, img4, img10, img2, img3, img5, img8, img9];
+
+  const sliderRef = useRef(null); // Ref to the products slider container
+
+  useEffect(() => {
+    const handleWheel = (event) => {
+      event.preventDefault();
+      sliderRef.current.scrollLeft += event.deltaY;
+    };
+
+    const scrollContainer = document.querySelector('.products');
+    scrollContainer.addEventListener('wheel', handleWheel);
+
+    return () => {
+      scrollContainer.removeEventListener('wheel', handleWheel);
+    };
+  }, []); 
+
+
   return (
     <section className="section">
       <div className="product-banner">
@@ -39,12 +69,22 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Products Slider */}
+
+      <div className="products-slider">
+        <div className="products" ref={sliderRef}>
+          {images.map((image, index) => (
+            <img key={index} src={image} alt={`Product ${index + 1}`} />
+          ))}
+        </div>
+      </div>
+
       {/* ADVERTISE */}
       <div className="advertise-bannar">
         <div className="img-background"></div>
         <div className="advertise-left">
           <div className="advertise-content-left">
-            <img src={img1} alt="" />
+            <img src={img20} alt="" />
           </div>
         </div>
         <div className="advertise-right">
@@ -62,3 +102,7 @@ const Home = () => {
 };
 
 export default Home;
+
+
+
+
