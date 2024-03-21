@@ -35,9 +35,12 @@ const Nav = () => {
   }, []);
 
   const logout = () => {
+    setIsLoggedIn(false);
     localStorage.removeItem('data');
     toast.success('Log out was successful!');
+    
     navigate('/');
+    
   };
 
   return (
